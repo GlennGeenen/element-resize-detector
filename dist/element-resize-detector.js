@@ -454,7 +454,8 @@ module.exports = function(options) {
     options             = options || {};
     var reporter        = options.reporter;
     var batchProcessor  = options.batchProcessor;
-    var getState        = options.stateHandler.getState;
+    var getState = options.stateHandler.getState;
+    var cleanState = options.stateHandler.cleanState;
     var hasState        = options.stateHandler.hasState;
     var idHandler       = options.idHandler;
 
@@ -1081,8 +1082,10 @@ module.exports = function(options) {
 
         state.container && element.removeChild(state.container);
 
-        // cleanup listeners array, because it keeps existing
+        // cleanup the rest of the state
         state.listeners = null;
+
+        cleanState(element);
     }
 
     return {
