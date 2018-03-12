@@ -637,6 +637,9 @@ module.exports = function(options) {
         state.onAnimationStart && removeEvent(state.container, "animationstart", state.onAnimationStart);
 
         state.container && element.removeChild(state.container);
+
+        // cleanup listeners array, because it keeps existing
+        state.listeners = null;
     }
 
     return {
