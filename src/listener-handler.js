@@ -48,7 +48,9 @@ module.exports = function(idHandler) {
     function removeAllListeners(element) {
       var listeners = getListeners(element);
       if (!listeners) { return; }
-      listeners.length = 0;
+      var id = idHandler.get(element);
+      delete eventListeners[id];
+
     }
 
     return {
