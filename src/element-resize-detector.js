@@ -304,7 +304,7 @@ module.exports = function(options) {
         }
 
         forEach(elements, function (element) {
-            eventListenerHandler.removeAllListeners(element);
+            eventListenerHandler.uninstall(element);
             detectionStrategy.uninstall(element);
             stateHandler.cleanState(element);
         });
