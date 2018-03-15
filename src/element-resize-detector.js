@@ -232,7 +232,7 @@ module.exports = function(options) {
                     if (stateHandler.getState(element)) {
                         elementUtils.markAsDetectable(element);
                         elementUtils.markBusy(element, false);
-                        detectionStrategy.addListener(element, onResizeCallback);
+                        // detectionStrategy.addListener(element, onResizeCallback);
                         addListener(callOnAdd, element, listener);
 
                         // Since the element size might have changed since the call to "listenTo", we need to check for this change,
