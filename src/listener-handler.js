@@ -45,7 +45,7 @@ module.exports = function(idHandler) {
         }
     }
 
-    function removeAllListeners() {
+    function removeAllListeners(element) {
         var id = idHandler.get(element);
         eventListeners[id] = null;
     }
