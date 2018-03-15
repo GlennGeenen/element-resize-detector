@@ -279,6 +279,14 @@ module.exports = function(options) {
         }
     }
 
+    function removeListener(element) {
+        eventListenerHandler.removeListener(element);
+    }
+
+    function removeAllListeners(element) {
+        eventListenerHandler.removeAllListeners(element);
+    }
+
     function uninstall(elements) {
         if(!elements) {
             return reporter.error("At least one element is required.");
@@ -303,10 +311,10 @@ module.exports = function(options) {
     }
 
     return {
-        listenTo: listenTo,
-        removeListener: eventListenerHandler.removeListener,
-        removeAllListeners: eventListenerHandler.removeAllListeners,
-        uninstall: uninstall
+        listenTo,
+        removeListener,
+        removeAllListeners,
+        uninstall,
     };
 };
 
